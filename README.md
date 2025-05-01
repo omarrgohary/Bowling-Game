@@ -8,12 +8,16 @@ Bowling Game is a visually engaging 3D bowling simulation developed using Python
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 Features
-2-Player Game Mode: Players alternate turns and frames, each taking up to 2 throws per frame.
-Scoring Logic: Calculates score per frame, including rules for strikes and spares.
-Score Display: Tracks and displays total score for each player.
-Hand-drawn Lanes and Pins: Custom OpenGL rendering of bowling lanes and triangular pin formations.
-Game Flow Logic: Handles player turns, ball throwing, pin detection, game over state, and reset behavior.
-Overlay Images: Decorative pin and stop images added for flair.
+  Two-player mode: The game alternates between two players, tracking scores individually across frames.
+  Multiple lanes: Lanes are drawn in a 3D OpenGL environment using geometric functions like draw_lane1() to draw_lane7() and Triangle() for pins.
+  Dynamic ball control: Players control the ball direction using arrow keys and launch with the space bar.
+  Pin collision & scoring: The ball can knock down pins, triggering scoring updates. It handles strikes (all pins in one throw) and spares (all pins in two throws).
+  Score tracking per frame: The game maintains frame-by-frame scoring for both players, updating scores based on pin hits.
+  Game end & prompt: After two frames for each player, it displays a GAME OVER message showing both players’ final scores, and prompts to restart or quit.
+  Sound integration:
+    Background bowling center ambience plays when the game starts, creating a realistic environment.
+    Strike/hit sound effect plays when the ball hits the pins, enhancing the gameplay feedback.
+  Replay option: After the game ends, players can choose to play again by pressing 'Y' or exit with 'N'.
 
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -25,7 +29,9 @@ OpenGL (GL, GLU)
 
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-How It Works :
+Full code for main() is available in the source and demonstrates integration of graphics, controls, state management, and audio.
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 The main() function : initializes the OpenGL window, loads textures, sets up lanes and pins, and runs the main game loop. It tracks:
   Ball position and motion (ball_x, ball_z)
@@ -95,3 +101,5 @@ Future Improvements :
 
 License :
 This project is open-source and available under the MIT License.
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------
